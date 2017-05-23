@@ -6,13 +6,13 @@ The most efficient way to understand the problems related to data is to debug wi
 
 1. Turn debug to true in settings.py , which default to false
 
-```
+```python
 DEBUG = True
 ```
 
 2. Add the SQL debug code just after the line executed
 
-```
+```python
 from django.db import connection; import re
 for i, query in enumerate(connection.queries):
     sql = re.split(r'(SELECT|FROM|WHERE|GROUP BY|ORDER BY|INNER JOIN|LIMIT)', query['sql'])
